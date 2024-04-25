@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Same CSS styles as the login page */
+        .signup-form-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.9);
+            position: fixed;
+            top:0 ; 
+            z-index: 1000;
+            height: 100%;
+            width: 100%;
+        }
+        .signup-form-container.active{
+            right: 0;
+        }
+        .signup-form-container form{
+            background: #fff;
+            border: 1px solid black;
+            width: 20%;
+            padding: 2rem;
+            box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.7);
+            border-radius: .5rem;
+            margin: 3rem;
+        }
+        .signup-form-container form h3{
+            font-size: 2rem;
+            text-align: center;
+            color: black;
+        }
+        .signup-form-container form span{
+            display: block;
+            font-size: 1.2rem;
+            padding-top: 1rem;
+        }
+        .signup-form-container form .box{
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid black;
+            border-radius: .5rem;
+            padding: .3rem .2rem;
+            color: black;
+            text-decoration: none;
+        }
+        .signup-form-container form .checkbox{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 0;
+        }
+        .signup-form-container form .checkbox label{
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .signup-form-container form .btn{
+            margin-top: .1rem;
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+        }
+        .signup-form-container form p{
+            font-size: 1.1rem;
+            padding-top: .4rem;
+            color:black;
+        }
+        .signup-form-container form p a{
+            color: green;
+            text-decoration: underline;
+        }
+        .signup-form-container #close-signup-btn{
+            position: absolute;
+            top: 1.5rem; 
+            right: 2.5rem;
+            font-size: 2rem;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-form-container">
+        <div id="close-signup-btn" class="fas fa-times"></div>
+        <form action="">
+            <h3>SIGN UP</h3>
+            <span>Username</span>
+            <input type="text" name="username" class="box" placeholder="Enter your username">
+            <span>Email</span>
+            <input type="email" name="email" class="box" placeholder="Enter your email">
+            <span>Password</span>
+            <input type="password" name="password" class="box" placeholder="Enter your password">
+            <span>Confirm Password</span>
+            <input type="password" name="confirm_password" class="box" placeholder="Confirm your password">
+            <input type="submit" value="Sign Up" class="btn">
+            <p>Back to Home <a href="../Frontend/index.html">Home</a></p>
+        </form>
+    </div>
+    <script>
+        var closeBtn = document.getElementById('close-signup-btn');
+
+// Add click event listener to the close button
+closeBtn.addEventListener('click', function() {
+    // Hide the signup form container
+    var signupFormContainer = document.querySelector('.signup-form-container');
+    signupFormContainer.style.display = 'none';
+    
+    // Redirect to the home page
+    window.location.href = '../Frontend/index.html';
+});
+ 
+      
+    </script>
+</body>
+</html>
